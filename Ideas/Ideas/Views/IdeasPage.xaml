@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Ideas.ViewModels"
+             x:Class="Ideas.Views.IdeasPage">
+    
+    <ContentPage.BindingContext>
+        <viewModels:IdeasViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="Logout_Clicked"
+            Command="{Binding LogoutCommand}"
+            Text="Logout"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="20">
+
+        <!--<Entry Text="{Binding AccessToken}" />
+
+        <Entry
+            Text="{Binding AccessToken}"/>-->
+
+        <Button 
+            BackgroundColor="ForestGreen"
+            Command="{Binding GetIdeasCommand}"
+            FontSize="30"
+            Text="Get all Ideas"
+            TextColor="White"/>
+
+        <Button
+            Clicked="GoToNewIdea_Clicked"
+            Text="New Idea"/>
+
+        <Button 
+            Clicked="SearchIdeas_Clicked"
+            Text="Search Ideas"/>
+
+        <ListView
+            HasUnevenRows="True"
+            ItemsSource="{Binding Ideas}"
+            ItemTapped="IdeasListView_ItemTapped">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout 
+                            Padding="0,10">
+                            <Label 
+                                FontSize="24"
+                                Text="{Binding Title}"
+                                TextColor="RoyalBlue"/>
+                            <Label
+                                Text="{Binding Description}" />
+                            <Label
+                                Text="{Binding Category}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

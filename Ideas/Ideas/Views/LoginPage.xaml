@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Ideas.ViewModels"
+             x:Class="Ideas.Views.LoginPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        Orientation="Vertical">
+
+        <Entry
+            Placeholder="Username"
+            Text="{Binding Username}"/>
+
+        <Entry
+            IsPassword="True"
+            Placeholder="Password"
+            Text="{Binding Password}"/>
+
+        <Button
+            Command="{Binding LoginCommand}"
+            Text="Login"/>
+
+        <Button
+            Clicked="GoToIdeasPage_Clicked"
+            Text="Go to Ideas Page"/>
+
+    </StackLayout>
+    
+</ContentPage>

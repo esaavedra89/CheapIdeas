@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Ideas.ViewModels"
+             x:Class="Ideas.Views.AddNewIdeaPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:AddNewIdeaViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        
+        <Entry 
+            Placeholder="Title"
+            Text="{Binding Title}"/>
+        <Entry 
+            Placeholder="Description"
+            Text="{Binding Description}"/>
+        <Entry 
+            Placeholder="Category"
+            Text="{Binding Category}"/>
+
+        <Button
+            Command="{Binding AddCommand}"
+            Text="Add New Idea"/>
+
+    </StackLayout>
+    
+</ContentPage>

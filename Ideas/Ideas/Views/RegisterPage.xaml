@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ideas.Views.RegisterPage"
+             xmlns:viewModels="clr-namespace:Ideas.ViewModels; assembly=Ideas">
+    
+    <ContentPage.BindingContext>
+        <viewModels:RegisterViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        Orientation="Vertical"
+        Padding="20">
+        
+        <Entry
+            Placeholder="Email"
+            Text="{Binding Email}"/>
+        
+        <Entry
+            IsPassword="True"
+            Placeholder="Password"
+            Text="{Binding Password}"/>
+        
+        <Entry
+            IsPassword="True"
+            Placeholder="Confirm Password"
+            Text="{Binding ConfirmPassword}"/>
+        
+        <Button
+            Command="{Binding RegisterCommand}"
+            Text="Registarse"/>
+        
+        <Label 
+            Text="{Binding Message}"
+            TextColor="Black"/>
+
+        <Button 
+            Clicked="GoToLogin_Clicked"
+            Text="Go to Login Page"
+            TextColor="Black"/>
+        
+    </StackLayout>
+</ContentPage>

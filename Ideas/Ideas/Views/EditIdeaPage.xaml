@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Ideas.ViewModels"
+             x:Class="Ideas.Views.EditIdeaPage">
+
+    <!--<ContentPage.BindingContext>
+        <viewModels:EditIdeaViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <StackLayout>
+        
+        <Entry
+            Placeholder="Title"
+            Text="{Binding Idea.Title}"/>
+        
+        <Entry
+            Placeholder="Description"
+            Text="{Binding Idea.Description}"/>
+        
+        <Entry
+            Placeholder="Category"
+            Text="{Binding Idea.Category}"/>
+
+        <Button 
+            Command="{Binding EditCommand}"
+            Text="Edit Idea"/>
+
+        <Button 
+            Command="{Binding DeleteCommand}"
+            Text="Delete Idea"/>
+        
+    </StackLayout>
+    
+</ContentPage>
